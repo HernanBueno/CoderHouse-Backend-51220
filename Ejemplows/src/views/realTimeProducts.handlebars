@@ -1,0 +1,35 @@
+{{> manageProduct }}
+
+<div>    
+    <h1>List of products in real time</h1>
+    <h1></h1>
+    <table id="prodsLiveTable">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Code</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th>Thumbnail</th>
+        </tr>
+        {{#each productsList}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.code}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.description}}</td>
+                <td><img src={{this.thumbnail}} alt={{this.thumbnail}}></td>
+            </tr>
+        {{/each}}
+        <div id="productsList">
+
+        </div>
+        
+    </table>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>

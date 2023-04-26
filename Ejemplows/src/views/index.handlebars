@@ -1,0 +1,27 @@
+<div>
+    <h1>List of products</h1>
+    <h1></h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Code</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th>Thumbnail</th>
+        </tr>
+        {{#each productsData}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.code}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.description}}</td>
+                <td><img src={{this.thumbnail}} alt={{this.thumbnail}}></td>
+            </tr>
+        {{/each}}
+        
+    </table>
+</div>

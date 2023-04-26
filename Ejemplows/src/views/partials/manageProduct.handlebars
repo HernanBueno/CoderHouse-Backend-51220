@@ -1,0 +1,31 @@
+<div>
+    <h1>Add a product</h1>
+    <h1></h1>
+
+    <form action="/realtimeproducts" method="POST" id="addProductForm" onsubmit="addLiveProduct">
+      Title: <input type="text" name="title">
+      Price: <input type="number" name="price">
+      Code: <input type="text" name="code">
+      Stock: <input type="number" name="stock">
+      Description: <input type="text" name="description">
+      Thumbnail: <input type="text" name="thumbnail">
+      <button>Add</button>
+    </form>
+</div>
+
+<div>
+    <h1>Delete a product</h1>
+    <h1></h1>
+    <form action="/realtimeproducts?method=DELETE" method="POST">
+      ID: <input type="number" name="id">
+      <button>Delete</button>
+    </form>
+</div>
+
+{{#if errorDelete}}
+  <div>
+    <h3>{{this.errorMessage}}</h3>
+    <h1></h1>
+  </div>
+ 
+{{/if}}
